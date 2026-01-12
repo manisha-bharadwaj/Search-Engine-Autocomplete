@@ -47,27 +47,16 @@ trie.h - Defines Trie structure
 data.txt - Search query dataset
 seed.txt - Base queries
 generate.py - Expands base queries into a large dataset
-
-yaml
 Copy code
 
----
 
 ## How to Run
 
 Compile the program:
-
 g++ main.cpp trie.cpp -o search
 
-yaml
-Copy code
-
 Run the application:
-
 ./search
-
-yaml
-Copy code
 
 Type any prefix such as `how`, `best`, or `python` to get autocomplete suggestions.
 
