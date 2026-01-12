@@ -1,76 +1,95 @@
-Search Engine Autocomplete System
-Project Overview
+# Search Engine Autocomplete System
 
-This project implements a Search Engine Autocomplete System using the Trie (Prefix Tree) data structure. It provides fast and efficient real-time search suggestions based on user-entered prefixes, similar to the autocomplete functionality used in modern search engines.
+---
+
+## Project Overview
+
+This project implements a **Search Engine Autocomplete System** using the **Trie (Prefix Tree)** data structure.  
+It provides fast, real-time search suggestions based on user-entered prefixes, similar to modern search engines like Google.
 
 The system is designed to handle large volumes of search queries and return relevant suggestions with minimal latency.
 
-Problem Statement
+---
 
-In traditional search systems, finding words that match a given prefix requires scanning all stored terms, which becomes inefficient as the dataset grows. This project solves that problem by using a Trie, which allows prefix-based search in O(K) time, where K is the length of the input prefix.
+## Problem Statement
 
-Technology Stack
+Traditional search systems scan all stored terms to find prefix matches, which becomes inefficient for large datasets.  
+This project solves the problem by using a **Trie**, enabling prefix-based searching in **O(K)** time, where **K** is the length of the input prefix.
 
-C++
+---
 
-Trie (Prefix Tree)
+## Technology Stack
 
-Hash Maps
+- C++
+- Trie (Prefix Tree)
+- Hash Maps
+- Strings
+- File Handling
 
-Strings
+---
 
-File Handling
+## System Design
 
-System Design
+1. Search queries are loaded from `data.txt`
+2. Each query is inserted into a Trie data structure
+3. The Trie is traversed using the user’s input prefix
+4. All valid completions are collected and displayed as suggestions
 
-Search queries are loaded from a text file (data.txt).
+This design allows the system to return results instantly even for large datasets.
 
-Each query is inserted into a Trie structure.
+---
 
-When the user enters a prefix, the Trie is traversed to locate the matching node.
+## Project Structure
 
-All possible completions from that node are collected and displayed as suggestions.
+main.cpp - Handles user input and output
+trie.cpp - Implements Trie logic
+trie.h - Defines Trie structure
+data.txt - Search query dataset
+seed.txt - Base queries
+generate.py - Expands base queries into a large dataset
 
-This approach allows extremely fast and scalable autocomplete operations.
+yaml
+Copy code
 
-Project Structure
-main.cpp     → Handles user input and displays suggestions  
-trie.cpp     → Implements Trie logic  
-trie.h       → Defines Trie structure  
-data.txt     → Search query dataset  
-seed.txt     → Base queries used to generate data  
-generate.py  → Expands base queries into large query sets  
+---
 
-How to Run the Project
+## How to Run
 
 Compile the program:
 
 g++ main.cpp trie.cpp -o search
 
+yaml
+Copy code
 
 Run the application:
 
 ./search
 
+yaml
+Copy code
 
-Enter any prefix (for example: how, best, python) to see real-time autocomplete suggestions.
+Type any prefix such as `how`, `best`, or `python` to get autocomplete suggestions.
 
-Features
+---
 
-Supports large-scale query datasets (10,000+ queries)
+## Key Features
 
-Fast prefix-based search
+- Supports 10,000+ search queries  
+- Fast prefix-based lookup  
+- Real-time autocomplete suggestions  
+- Memory-efficient Trie implementation  
+- Expandable dataset using query generator  
 
-Real-time autocomplete suggestions
+---
 
-Efficient memory usage using Trie structure
+## Why Trie?
 
-Easily expandable dataset using query generation script
+A **Trie** allows prefix searches in **O(K)** time, where K is the length of the user’s input.  
+This makes it much faster than scanning all words, making it ideal for search engines and autocomplete systems.
 
-Why Trie?
+---
 
-A Trie is ideal for autocomplete systems because it allows search operations in O(K) time, where K is the length of the input prefix. This makes it significantly faster than scanning all words or using linear search, especially for large datasets.
-
-Author
+## Author
 
 Manisha Bharadwaj
